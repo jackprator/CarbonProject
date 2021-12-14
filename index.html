@@ -4,53 +4,194 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <title>Carbon Emission</title>
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/index.css">
+    <title>Carbon Footprint Calculator</title>
   </head>
   <body>
     <div class ="container">
       <div class="row">
         <div class="col">
-					<h1 class ="text-center">Carbon Emission</h1>
-        </div>
-      </div>
+          <header id="header">
+          <h1 class ="text-center">Carbon Footprint Calculator</h1>
+          </header>
+          <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark" id="navbar">
+              <ul class="navbar-nav mr-auto mx-auto justify-content-between">
+                <li class="nav-item">
+                <a class="nav-link text-center active" onclick="clickCalc()" href="#calcDiv">
+               <img src="images/calcIcon.png" class="img-fluid center-block" alt="Calculator Icon">
+                <p class="caption">Calculator</p>
+                </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-center active" onclick="clickMiles()" href="#milesDiv">
+                     <img src="images/milesIcon.png" class="img-fluid center-block" alt="Miles Icon">
+                    <p class="caption">Mileage</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-center active" onclick="clickVehicle()" href="#vehicleDiv">
+                     <img src="images/vehicleIcon.png" class="img-fluid center-block" alt="Vehicle Icon">
+                    <p class="caption">Vehicle</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-center active" onclick="clickMeat()" href="#meatDiv">
+                   <img src="images/meatIcon.png" class="img-fluid center-block" alt="Meat Icon">
+                    <p class="caption">Red Meat</p>
+                  </a>
+                </li>
+                </ul>
+          </nav>
+
+          <div class="container" style="background-image: url('images/water.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
 
         <div class="row">
-          <div class="col-md-8 mx-auto">
-					 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <div class="col-md-8 mx-auto ">
+            <div class="panel panel-default">
+              <div class="panel-body">Do you wonder how much your daily behavior contributes to global emmissions? Greenhouse gas emmissions are typically measured as pounds of CO₂ equivalent(CO₂e). This accounts for both carbon dioxide and methane production. <br> <b> Take the quiz below to calculate your contributions to carbon emissions. </b></div>
+           </div>
          </div>
         </div>
-
+<div class='container-fluid' id="calcDiv">
 <form>
   <div class="form-group">
-    <label class="form-control-label" for="question1">  About how many miles do you drive in a week?</label>
+    <label class="form-control-label" for="question1"><b>About how many miles do you drive in a week?</b></label>
     <input class="form-control" type="number" id="question1" name="miles" placeholder="0">
   </div>
 
   <div class="form-group">
-    <label class="form-control-label" for="question2">Which type of vehicle do you primarily drive?</label>
+    <label class="form-control-label" for="question2"><b>Which type of vehicle do you primarily use?</b></label>
     <select class="form-control" id="question2" name="vehicle">
-      <option value="75">Scooter</option>
-      <option value="100">Sedan</option>
-      <option value="200">Truck</option>
-      <option value="10">Bus</option>
-      <option value="50">Electric Car</option>
+      <option value="50">Scooter</option>
+      <option value="250">Sedan</option>
+      <option value="500">Truck</option>
+      <option value="50">Bus</option>
+      <option value="100">Electric Car</option>
       <option value="0">Bicycle</option>
     </select>
   </div>
 
   <div class="form-group">
-    <label class="form-control-label" for="question3">  How many servings of red meat do you eat in a week?</label>
+    <label class="form-control-label" for="question3"><b>How many servings of red meat do you eat in a week?</b></label>
     <input class="form-control" type="number" id="question3" name="meat" placeholder="0">
   </div>
+      </form>
+</div>
 
-  <div class="form-group">
-    <label class="form-control-label" for="resultbox">  Results </label>
-    <input class="form-control" type="text" id="results" name="resultbox" placeholder="0" readonly="readonly">
+      <div class="results-div" id="goodDiv">
+        <div class="card text-white bg-success mb-3">
+      <div class="card-body">
+        <h5 class="card-title">You're doing your part!</h5>
+        <p class="card-text">Kudos! It looks like you work hard to curb your impact on the planet. You might be:</p>
+          <ul>
+            <li>minimizing your time spent in a car</li>
+            <li>finding other ways to get where you're going</li>
+            <li>eating less than two servings of meat each week</li>
+          </ul>
+        <p><b> Double-click on the boxes below to see more solutions you might not have thought of.</b></p>
+      </div>
+      </div>
+      </div>
+
+      <div class="results-div" id="badDiv">
+        <div class="card text-white bg-danger mb-3">
+      <div class="card-body">
+        <h5 class="card-title">You could do a lot more.</h5>
+        <p class="card-text"> You appear to be a bit oblivious to the climate crisis. Changing just a few habits could help you lead a more sustainable life. You might consider:</p>
+          <ul>
+            <li>combining your errands into one trip</li>
+            <li>carpooling with others when possible</li>
+            <li>skipping out more frequently on eating beef</li>
+          </ul>
+        <p><b> Double-click on the boxes below to see more solutions you might not have thought of.</b></p>
+      </div>
+      </div>
+      </div>
+
+      <div class="results-div" id="neutralDiv">
+        <div class="card text-white bg-warning mb-3">
+      <div class="card-body">
+        <h5 class="card-title">Your impact is average.</h5>
+        <p class="card-text">It seems you're considerate about your impact on the planet. But everyone can improve. You could think about:</p>
+          <ul>
+            <li>checking your car's tire pressure</li>
+            <li>using cruise control to drive at a steady speed</li>
+            <li>cutting back on your red meat consumption</li>
+          </ul>
+        <p><b> Double-click on the boxes below to see more solutions you might not have thought of.</b></p>
+      </div>
+      </div>
+      </div>
+
+  <div class="card-deck">
+    <div class="card mb-3" onclick="clickMiles()">
+      <img class="card-img-top" src="images/road.jpg" alt="Photo of highway">
+      <div class="card-body">
+        <h5 class="card-title">How miles driven contribute to carbon emmissions</h5>
+        <p><small class="text-muted"><a href="https://commons.wikimedia.org/wiki/File:Anjarle_Bridge_and_Cows-fix.jpg">Photographer: Dey.sandip </a>, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a></small></p>
+      </div>
+    </div>
+    <div class="card mb-3" onclick="clickVehicle()">
+      <img class="card-img-top" src="images/vehicles.jpg" alt="photo of a car dealership">
+      <div class="card-body">
+        <h5 class="card-title">How the type of transportation you use affects carbon emmissions</h5>
+        <p><small class="text-muted"><a href="https://commons.wikimedia.org/wiki/File:Honda_Dealership.jpg">Photographer: Velin Simeonov</a>,<a href="https://creativecommons.org/licenses/by-sa/4.0"> CC BY-SA 4.0</a></small></p>
+      </div>
+    </div>
+    <div class="card mb-3" onclick="clickMeat()">
+      <img class="card-img-top" src="images/cattleFarm.jpg" alt="Photo of a cattle farm">
+      <div class="card-body">
+        <h5 class="card-title">How red meat consumption contributes to carbon emmissions</h5>
+        <p><small class="text-muted"><a href="https://commons.wikimedia.org/wiki/File:Amsterdam_Island_Cattle.jpg">&gt;\\SAS 06-27-2017</a>, CC0, via Wikimedia Commons</small></p>
+      </div>
+    </div>
   </div>
 
-      </form>
+  <div class="container-fluid" id="milesDiv">
+    <div class="card mb-3">
+  <img class="card-img-top" src="images/road2.jpg" alt="Highway photo">
+  <div class="card-body">
+    <h5 class="card-title">Miles Driven</h5>
+    <p class="card-text"> Road transportation accounts for<b> 23% </b>of all greenhouse gas emmissions across the U.S. Miles driven per capita yearly <b>grew 9%</b> from 1995 to 2018. The average passenger car emits <b>0.78 pounds </b>of CO₂ per mile driven.</p>
+    <p><b>Traveling via bicycle has shown to reduce greenhouse gas emissions, traffic congestion and health care costs. </b></p>
+    <p class="card-text"><small class="text-muted">This information comes from the <a href="https://css.umich.edu/sites/default/files/Carbon%20Footprint_CSS09-05_e2021.pdf">University of Michigan Carbon Footprint Factsheet</a> and the <a href="https://ij-healthgeographics.biomedcentral.com/articles/10.1186/s12942-021-00272-2">International Journal of Health Geographics </a></small></p>
+      <p class="card-text"><small class="text-muted"><a href="https://commons.wikimedia.org/wiki/File:Fuerteventura_%E2%80%93_landscape_as_seen_from_Valle_de_Santa_In%C3%A9s.jpg">Photographer: Cayambe</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via Wikimedia Commons</small></p>
+  </div>
+</div>
+  </div>
+  <div class="container-fluid" id="vehicleDiv">
+    <div class="card mb-3">
+  <img class="card-img-top" src="images/traffic.jpg" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Vehicle Type</h5>
+    <p class="card-text"><b>23.5 pounds</b> of CO₂e are emitted per gallon of gasoline. In the U.S., gas cars churn out over <b>11,000 pounds </b>of CO₂e annually, while electric cars produce <b>nearly one-third</b> of that amount.	Electric cars have no tailpipe emissions, but emissions can be produced and measured by the source of electrical power, often through fossil fuels.</p>
+    <p><b>You can improve your fuel economy <i>7-14% </i>by following the speed limit. Every 5 mph increase over 50 mph is equal to spending an extra $0.20-$0.40 per gallon at the pump.</b></p>
+    <p class="card-text"><small class="text-muted">This information comes from the <a href="https://css.umich.edu/sites/default/files/Carbon%20Footprint_CSS09-05_e2021.pdf">University of Michigan Carbon Footprint Factsheet</a> and <a href="https://afdc.energy.gov/vehicles/electric_emissions.html"> the Alternative Fuels Data Center</a> </small></p>
+    <p class="card-text"><small class="text-muted"><a href="File:Bangkok_downtown_traffic.jpg">Photographer: Tomasz Swatowski</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a></small></p>
+  </div>
+</div>
+  </div>
+  <div class="container-fluid" id="meatDiv">
+    <div class="card mb-3">
+  <img class="card-img-top" src="images/cattle.jpg" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Red Meat Consumption</h5>
+    <p class="card-text">Food accounts for <b>10-30% </b>of a household's carbon footprint. Meat makes a hefty contribution to this number:<b> 57% </b>of greenhouse gas contributions in the average diet. Beef generates <b>6.6 pounds</b> of CO₂e per serving, almost triple the amount generated by the next largest contributor, cheese. </p>
+    <p><b>If everyone in the U.S were to go vegetarian, we would save <i>330 million metric tons</i> of greenhouse gas emissions per year. This would cut emmissions by about 5%.</b></p>
+    <p class="card-text"><small class="text-muted">This information comes from the <a href="https://css.umich.edu/sites/default/files/Carbon%20Footprint_CSS09-05_e2021.pdf">University of Michigan Carbon Footprint Factsheet</a> and <a href="https://www.nature.com/articles/s41598-019-46590-1">Eshel, Stainier, and Shepon et al. <i>Environmentally Optimal, Nutritionally Sound, Protein and Energy Conserving Plant Based Alternatives to U.S. Meat.</i></a> </small></p>
+    <p class="card-text"><small class="text-muted">
+    <a href="https://commons.wikimedia.org/wiki/File:Anjarle_Bridge_and_Cows-fix.jpg">Photographer: Dey.sandip </a>, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a></small> </p>
+  </div>
+</div>
+  </div>
+</div>
+<footer>
+  <p> Navigation icons by <a href="https://commons.wikimedia.org/wiki/File:Eucalyp-Deus_Liberal_Ambientalism.png">Eucalyp and Freepik edited by Bruce The Deus</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a> <br> Background photo by <a href="https://commons.wikimedia.org/wiki/File:The_underwater_surface_structures_of_an_iceberg_in_Svalbard.jpg">Andreas Weith</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a></p>
+</footer>
 </div>
 </div>
 		<script src="scripts/index.js"></script>
-	</body>
+    </div>
+  </body>
 </html>

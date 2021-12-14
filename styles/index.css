@@ -1,0 +1,50 @@
+#header {
+    background-image: url("images/fire.jpg");
+}
+
+.navbar-nav > li{
+  padding-left: 60px;
+  padding-right: 60px;
+  position: sticky;
+}
+
+p.caption {
+  color: #fff;
+}
+
+body {
+  color: #000000;
+}
+
+#calcDiv {
+padding: 3rem;
+}
+
+#milesDiv {
+     display: none;
+}
+#vehicleDiv {
+     display: none;
+}
+#meatDiv {
+     display: none;
+}
+.results-div {
+  display: none;
+}
+.card {
+  margin: 2rem;
+}
+.panel-body {
+  padding-top: 2rem;
+  font-size: 1.2rem;
+}
+ul {
+  font-size: 1.2rem;
+}
+
+@media screen and (max-width: 990px) {
+  .nav-item {
+    display: none;
+  }
+}
